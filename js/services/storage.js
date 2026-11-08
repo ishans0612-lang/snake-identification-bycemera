@@ -1,12 +1,13 @@
 const THEME_KEY = 'snake-id-theme';
 const FAVORITES_KEY = 'snake-id-favorites';
 const RECENT_KEY = 'snake-id-recent';
+const LANGUAGE_KEY = 'snake-id-language';
 
 function readJSON(key, fallback) {
   try {
     const value = localStorage.getItem(key);
     return value ? JSON.parse(value) : fallback;
-  } catch (error) {
+  } catch {
     return fallback;
   }
 }
@@ -14,47 +15,47 @@ function readJSON(key, fallback) {
 function writeJSON(key, value) {
   try {
     localStorage.setItem(key, JSON.stringify(value));
-  } catch (error) {
-    // Ignore localStorage write failures in restricted browser environments.
+  } catch {
+    // Storage can be disabled or full; app functionality should still be usable for this visit.
   }
 }
 
 export const storage = {
   getTheme() {
-    return localStorage.getItem(THEME_KEY) || 'light';
+    try { return localStorage.getItem(THEME_KEY) || 'light'; } catch { return 'light'; }
   },
-
   setTheme(theme) {
-    localStorage.setItem(THEME_KEY, theme);
+    try { localStorage.setItem(THEME_KEY, theme); } catch { /* Optional preference. */ }
   },
-
+  getLanguage() {
+    try { return localStorage.getItem(LANGUAGE_KEY) || 'en'; } catch { return 'en'; }
+  },
+  setLanguage(language) {
+    try { localStorage.setItem(LANGUAGE_KEY, language); } catch { /* Optional preference. */ }
+  },
   getFavorites() {
-    return readJSON(FAVORITES_KEY, []);
+    const items = readJSON(FAVORITES_KEY, []);
+    return Array.isArray(items) ? items : [];
   },
-
   addFavorite(id) {
     const list = new Set(this.getFavorites());
     list.add(id);
     writeJSON(FAVORITES_KEY, [...list]);
   },
-
   removeFavorite(id) {
-    const list = this.getFavorites().filter((item) => item !== id);
-    writeJSON(FAVORITES_KEY, list);
+    writeJSON(FAVORITES_KEY, this.getFavorites().filter((item) => item !== id));
   },
-
   getRecent() {
-    return readJSON(RECENT_KEY, []);
+    const items = readJSON(RECENT_KEY, []);
+    return Array.isArray(items) ? items : [];
   },
-
   addRecent(id) {
     const list = [id, ...this.getRecent().filter((item) => item !== id)];
     writeJSON(RECENT_KEY, list.slice(0, 8));
   },
-
   clearLocalData() {
-    localStorage.removeItem(THEME_KEY);
-    localStorage.removeItem(FAVORITES_KEY);
-    localStorage.removeItem(RECENT_KEY);
+    [THEME_KEY, FAVORITES_KEY, RECENT_KEY, LANGUAGE_KEY, 'snake-id-experience'].forEach((key) => {
+      try { localStorage.removeItem(key); } catch { /* Optional storage. */ }
+    });
   }
 };
