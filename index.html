@@ -4,10 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#1c3e2d" />
-    <meta
-      name="description"
-      content="Snake Identification App - educational snake database, safety guidance, and wildlife information."
-    />
+    <meta name="description" content="Snake Identification App - educational snake database, safety guidance, and wildlife information." />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <title>Snake Identification App</title>
@@ -20,12 +17,8 @@
       <header class="topbar">
         <div class="brand-wrap">
           <div class="brand-mark" aria-hidden="true">🐍</div>
-          <div>
-            <p class="eyebrow">Wildlife education</p>
-            <h1>Snake Identification App</h1>
-          </div>
+          <div><p class="eyebrow">Wildlife education</p><h1>Snake Identification App</h1></div>
         </div>
-
         <nav class="main-nav" aria-label="Main navigation">
           <button class="nav-link active" data-target="home">Home</button>
           <button class="nav-link" data-target="identify">Identify Snake</button>
@@ -40,326 +33,47 @@
           <button class="nav-link" data-target="about">About</button>
           <button class="nav-link" data-target="settings">Settings</button>
         </nav>
-
         <div class="header-actions">
           <div class="status-pill" id="network-status" aria-live="polite">Online</div>
-          <button class="icon-button" id="theme-toggle" type="button" aria-label="Toggle theme">
-            ☀️
-          </button>
-          <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Toggle menu">
-            ☰
-          </button>
+          <button class="icon-button" id="theme-toggle" type="button" aria-label="Toggle theme">☀️</button>
+          <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Toggle menu">☰</button>
         </div>
       </header>
-
       <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
-        <button data-target="home">Home</button>
-        <button data-target="identify">Identify Snake</button>
-        <button data-target="snake-database">Database</button>
-        <button data-target="search">Search</button>
-        <button data-target="compare">Compare</button>
-        <button data-target="india-map">India Map</button>
-        <button data-target="safety-guide">Safety</button>
-        <button data-target="emergency-numbers">Emergency</button>
-        <button data-target="favorites">Favorites</button>
-        <button data-target="recent-history">Recent</button>
-        <button data-target="about">About</button>
-        <button data-target="settings">Settings</button>
+        <button data-target="home">Home</button><button data-target="identify">Identify Snake</button>
+        <button data-target="snake-database">Database</button><button data-target="search">Search</button>
+        <button data-target="compare">Compare</button><button data-target="india-map">India Map</button>
+        <button data-target="safety-guide">Safety</button><button data-target="emergency-numbers">Emergency</button>
+        <button data-target="favorites">Favorites</button><button data-target="recent-history">Recent</button>
+        <button data-target="about">About</button><button data-target="settings">Settings</button>
       </nav>
-
       <main class="page-content">
-        <section id="home" class="section active-section">
-          <div class="hero-card">
-            <div class="hero-copy">
-              <p class="section-tag">Stage 1: interface and app shell</p>
-              <h2>Learn responsibly. Identify carefully. Stay safe.</h2>
-              <p>
-                This project provides an educational wildlife interface for snake identification,
-                safety guidance, and verified information access. It is designed to support later
-                model integration, offline data, and mobile installation.
-              </p>
-              <div class="button-row">
-                <button class="primary-button" data-target="identify">Identify Snake</button>
-                <button class="secondary-button" data-target="snake-database">Browse Database</button>
-              </div>
-            </div>
-
-            <div class="hero-panel" aria-label="Snake safety overview">
-              <div class="info-badge">Educational safety notice</div>
-              <ul>
-                <li>Never handle a snake without proper training.</li>
-                <li>Unverified image matching is not diagnosis.</li>
-                <li>Suspected snakebite requires immediate medical care.</li>
-              </ul>
-            </div>
-          </div>
+        <section id="home" class="section active-section"><div class="hero-card"><div class="hero-copy">
+          <p class="section-tag">Stage 1: interface and app shell</p><h2>Learn responsibly. Identify carefully. Stay safe.</h2>
+          <p>This project provides an educational wildlife interface for snake identification, safety guidance, and verified information access. It is designed to support later model integration, offline data, and mobile installation.</p>
+          <div class="button-row"><button class="primary-button" data-target="identify">Identify Snake</button><button class="secondary-button" data-target="snake-database">Browse Database</button></div>
+        </div><div class="hero-panel" aria-label="Snake safety overview"><div class="info-badge">Educational safety notice</div><ul><li>Never handle a snake without proper training.</li><li>Unverified image matching is not diagnosis.</li><li>Suspected snakebite requires immediate medical care.</li></ul></div></div></section>
+        <section id="identify" class="section"><div class="section-heading"><div><p class="section-tag">Identification</p><h2>Identify Snake</h2></div></div>
+          <div class="card-grid two-columns"><div class="panel"><div class="panel-header"><h3>Upload or capture image</h3></div>
+            <input id="image-input" type="file" accept="image/*" hidden /><div class="button-row stacked-mobile"><button class="primary-button" id="choose-image" type="button">Choose Image</button><button class="secondary-button" id="camera-trigger" type="button">Use Camera</button></div>
+            <div class="image-preview-box" id="image-preview-box"><span>No image selected</span></div><div class="button-row stacked-mobile"><button class="primary-button" id="analyze-image" type="button">Analyze Image</button><button class="ghost-button" id="retake-image" type="button">Retake</button></div>
+          </div><div class="panel"><div class="panel-header"><h3>Recognition status</h3></div><div class="alert-box warning" id="identification-status">Automated identification is not available yet. Please consult a qualified wildlife expert.</div><div class="match-list" id="match-list" aria-live="polite"><p class="muted">No AI results available yet.</p></div></div></div>
         </section>
-
-        <section id="identify" class="section">
-          <div class="section-heading">
-            <div>
-              <p class="section-tag">Identification</p>
-              <h2>Identify Snake</h2>
-            </div>
-          </div>
-
-          <div class="card-grid two-columns">
-            <div class="panel">
-              <div class="panel-header">
-                <h3>Upload or capture image</h3>
-              </div>
-
-              <input id="image-input" type="file" accept="image/*" hidden />
-
-              <div class="button-row stacked-mobile">
-                <button class="primary-button" id="choose-image" type="button">Choose Image</button>
-                <button class="secondary-button" id="camera-trigger" type="button">Use Camera</button>
-              </div>
-
-              <div class="image-preview-box" id="image-preview-box">
-                <span>No image selected</span>
-              </div>
-
-              <div class="button-row stacked-mobile">
-                <button class="primary-button" id="analyze-image" type="button">Analyze Image</button>
-                <button class="ghost-button" id="retake-image" type="button">Retake</button>
-              </div>
-            </div>
-
-            <div class="panel">
-              <div class="panel-header">
-                <h3>Recognition status</h3>
-              </div>
-              <div class="alert-box warning" id="identification-status">
-                Automated identification is not available yet. Please consult a qualified wildlife
-                expert.
-              </div>
-
-              <div class="match-list" id="match-list" aria-live="polite">
-                <p class="muted">No AI results available yet.</p>
-              </div>
-            </div>
-          </div>
+        <section id="snake-database" class="section"><div class="section-heading"><div><p class="section-tag">Database</p><h2>Snake Database</h2></div></div>
+          <div class="filter-row" id="species-filters"><button class="filter-chip active" data-filter="all">All</button><button class="filter-chip" data-filter="venomous">Venomous</button><button class="filter-chip" data-filter="non-venomous">Non-venomous</button><button class="filter-chip" data-filter="india">India</button><button class="filter-chip" data-filter="family">Family</button></div><div class="card-grid species-grid" id="species-grid" aria-live="polite"></div>
         </section>
-
-        <section id="snake-database" class="section">
-          <div class="section-heading">
-            <div>
-              <p class="section-tag">Database</p>
-              <h2>Snake Database</h2>
-            </div>
-          </div>
-
-          <div class="filter-row" id="species-filters">
-            <button class="filter-chip active" data-filter="all">All</button>
-            <button class="filter-chip" data-filter="venomous">Venomous</button>
-            <button class="filter-chip" data-filter="non-venomous">Non-venomous</button>
-            <button class="filter-chip" data-filter="india">India</button>
-            <button class="filter-chip" data-filter="family">Family</button>
-          </div>
-
-          <div class="card-grid species-grid" id="species-grid" aria-live="polite"></div>
-        </section>
-
-        <section id="search" class="section">
-          <div class="section-heading">
-            <div>
-              <p class="section-tag">Search</p>
-              <h2>Search snakes</h2>
-            </div>
-          </div>
-
-          <div class="panel search-panel">
-            <div class="search-controls">
-              <label class="sr-only" for="search-input">Search snakes</label>
-              <input id="search-input" type="search" placeholder="Search by common name, scientific name, region or family" />
-              <select id="search-filter">
-                <option value="all">All categories</option>
-                <option value="venomous">Venomous</option>
-                <option value="non-venomous">Non-venomous</option>
-                <option value="snake-family">Family</option>
-              </select>
-            </div>
-            <div id="search-results" class="search-results"></div>
-          </div>
-        </section>
-
-        <section id="compare" class="section">
-          <div class="section-heading">
-            <div>
-              <p class="section-tag">Compare</p>
-              <h2>Compare Snakes</h2>
-            </div>
-          </div>
-
-          <div class="panel compare-panel">
-            <div class="compare-selects">
-              <select id="compare-select-1"></select>
-              <select id="compare-select-2"></select>
-            </div>
-            <div class="compare-results" id="compare-results"></div>
-          </div>
-        </section>
-
-        <section id="india-map" class="section">
-          <div class="section-heading">
-            <div>
-              <p class="section-tag">India distribution</p>
-              <h2>India Map</h2>
-            </div>
-          </div>
-
-          <div class="panel map-panel">
-            <div class="india-map-art" aria-label="Illustrated India map">
-              <div class="map-shape map-north"></div>
-              <div class="map-shape map-central"></div>
-              <div class="map-shape map-south"></div>
-            </div>
-            <p class="muted">
-              Distribution data will be displayed only when reliable geographic information is
-              available for a verified species record.
-            </p>
-          </div>
-        </section>
-
-        <section id="safety-guide" class="section">
-          <div class="section-heading">
-            <div>
-              <p class="section-tag">Education</p>
-              <h2>Snake Safety Guide</h2>
-            </div>
-          </div>
-
-          <div class="card-grid info-grid">
-            <article class="info-card">
-              <h3>Stay Safe</h3>
-              <ul>
-                <li>Keep distance from snakes.</li>
-                <li>Do not handle or provoke wildlife.</li>
-                <li>Wear proper footwear outdoors.</li>
-              </ul>
-            </article>
-
-            <article class="info-card">
-              <h3>Suspected snakebite</h3>
-              <ul>
-                <li>Seek emergency medical care immediately.</li>
-                <li>Keep the person calm and reduce movement.</li>
-                <li>Do not delay hospital care for home remedies.</li>
-              </ul>
-            </article>
-
-            <article class="info-card">
-              <h3>Myth vs fact</h3>
-              <p>Snakes cannot be identified with certainty from a photo alone. A real bite should be treated by trained medical personnel.</p>
-            </article>
-          </div>
-        </section>
-
-        <section id="emergency-numbers" class="section">
-          <div class="section-heading">
-            <div>
-              <p class="section-tag">Emergency</p>
-              <h2>Emergency Numbers</h2>
-            </div>
-          </div>
-
-          <div class="panel emergency-panel">
-            <div class="emergency-controls">
-              <label for="country-select">Country</label>
-              <select id="country-select">
-                <option value="India">India</option>
-                <option value="United States">United States</option>
-                <option value="United Kingdom">United Kingdom</option>
-              </select>
-            </div>
-
-            <div id="emergency-list" class="emergency-list" aria-live="polite"></div>
-          </div>
-        </section>
-
-        <section id="favorites" class="section">
-          <div class="section-heading">
-            <div>
-              <p class="section-tag">Saved</p>
-              <h2>Favorites</h2>
-            </div>
-          </div>
-          <div class="panel">
-            <div id="favorites-list" class="list-stack"></div>
-          </div>
-        </section>
-
-        <section id="recent-history" class="section">
-          <div class="section-heading">
-            <div>
-              <p class="section-tag">History</p>
-              <h2>Recent History</h2>
-            </div>
-          </div>
-          <div class="panel">
-            <div id="recent-list" class="list-stack"></div>
-          </div>
-        </section>
-
-        <section id="about" class="section">
-          <div class="section-heading">
-            <div>
-              <p class="section-tag">About</p>
-              <h2>About this project</h2>
-            </div>
-          </div>
-
-          <div class="panel about-panel">
-            <p>
-              This project is a modular wildlife education and snake identification platform built for
-              responsive web access and future Android installation support. The current stage focuses
-              on the project shell, navigation, data presentation, safety guidance, and offline-ready
-              installation configuration.
-            </p>
-            <p>
-              Important: automated image recognition requires a real trained model or API. This app
-              does not claim to identify species without a valid configured model.
-            </p>
-          </div>
-        </section>
-
-        <section id="settings" class="section">
-          <div class="section-heading">
-            <div>
-              <p class="section-tag">Preferences</p>
-              <h2>Settings</h2>
-            </div>
-          </div>
-
-          <div class="panel settings-panel">
-            <div class="setting-row">
-              <label for="language-select">Language</label>
-              <select id="language-select">
-                <option value="en">English</option>
-                <option value="hi">Hindi</option>
-              </select>
-            </div>
-
-            <div class="setting-row">
-              <label for="theme-select">Theme</label>
-              <select id="theme-select">
-                <option value="light">Light</option>
-                <option value="dark">Dark</option>
-              </select>
-            </div>
-
-            <div class="setting-row">
-              <span>Offline status</span>
-              <strong id="offline-status-label">Available online</strong>
-            </div>
-
-            <button class="danger-button" id="clear-data" type="button">Clear local data</button>
-          </div>
-        </section>
+        <section id="search" class="section"><div class="section-heading"><div><p class="section-tag">Search</p><h2>Search snakes</h2></div></div><div class="panel search-panel"><div class="search-controls"><label class="sr-only" for="search-input">Search snakes</label><input id="search-input" type="search" placeholder="Search by common name, scientific name, region or family" /><select id="search-filter"><option value="all">All categories</option><option value="venomous">Venomous</option><option value="non-venomous">Non-venomous</option><option value="snake-family">Family</option></select></div><div id="search-results" class="search-results"></div></div></section>
+        <section id="compare" class="section"><div class="section-heading"><div><p class="section-tag">Compare</p><h2>Compare Snakes</h2></div></div><div class="panel compare-panel"><div class="compare-selects"><select id="compare-select-1" aria-label="First snake"></select><select id="compare-select-2" aria-label="Second snake"></select></div><div class="compare-results" id="compare-results"></div></div></section>
+        <section id="india-map" class="section"><div class="section-heading"><div><p class="section-tag">India distribution</p><h2>India Map</h2></div></div><div class="panel map-panel"><div class="india-map-art" aria-label="Illustrative placeholder, not a distribution map"><div class="map-shape map-north"></div><div class="map-shape map-central"></div><div class="map-shape map-south"></div></div><p class="muted">Distribution data will be displayed only when reliable geographic information is available for a verified species record.</p></div></section>
+        <section id="safety-guide" class="section"><div class="section-heading"><div><p class="section-tag">Education</p><h2>Snake Safety Guide</h2></div></div><div class="card-grid info-grid"><article class="info-card"><h3>Stay Safe</h3><ul><li>Keep distance from snakes.</li><li>Do not handle or provoke wildlife.</li><li>Wear proper footwear outdoors.</li></ul></article><article class="info-card"><h3>Suspected snakebite</h3><ul><li>Seek emergency medical care immediately.</li><li>Keep the person calm and reduce movement.</li><li>Do not delay hospital care for home remedies.</li></ul></article><article class="info-card"><h3>Myth vs fact</h3><p>Snakes cannot be identified with certainty from a photo alone. A real bite should be treated by trained medical personnel.</p></article></div></section>
+        <section id="emergency-numbers" class="section"><div class="section-heading"><div><p class="section-tag">Emergency</p><h2>Emergency Numbers</h2></div></div><div class="panel emergency-panel"><div class="emergency-controls"><label for="country-select">Country</label><select id="country-select"><option value="India">India</option><option value="United States">United States</option><option value="United Kingdom">United Kingdom</option></select></div><div id="emergency-list" class="emergency-list" aria-live="polite"></div></div></section>
+        <section id="favorites" class="section"><div class="section-heading"><div><p class="section-tag">Saved</p><h2>Favorites</h2></div></div><div class="panel"><div id="favorites-list" class="list-stack"></div></div></section>
+        <section id="recent-history" class="section"><div class="section-heading"><div><p class="section-tag">History</p><h2>Recent History</h2></div></div><div class="panel"><div id="recent-list" class="list-stack"></div></div></section>
+        <section id="about" class="section"><div class="section-heading"><div><p class="section-tag">About</p><h2>About this project</h2></div></div><div class="panel about-panel"><p>This project is a modular wildlife education and snake identification platform built for responsive web access and future Android installation support. The current stage focuses on the project shell, navigation, data presentation, safety guidance, and offline-ready installation configuration.</p><p>Automated image recognition requires a real trained model or API. This app does not claim to identify species without a valid configured model.</p></div></section>
+        <section id="settings" class="section"><div class="section-heading"><div><p class="section-tag">Preferences</p><h2>Settings</h2></div></div><div class="panel settings-panel"><div class="setting-row"><label for="language-select">Language</label><select id="language-select"><option value="en">English</option><option value="hi">Hindi</option></select></div><div class="setting-row"><label for="theme-select">Theme</label><select id="theme-select"><option value="light">Light</option><option value="dark">Dark</option></select></div><div class="setting-row"><span>Offline status</span><strong id="offline-status-label">Available online</strong></div><button class="danger-button" id="clear-data" type="button">Clear local data</button></div></section>
       </main>
     </div>
-
     <script type="module" src="./js/app.js"></script>
+    <script type="module" src="./js/experience.js"></script>
   </body>
 </html>
