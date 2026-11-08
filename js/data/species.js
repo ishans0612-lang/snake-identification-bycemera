@@ -1,0 +1,80 @@
+export const SAMPLE_SPECIES = [
+  {
+    id: 'indian-cobra',
+    commonName: 'Indian Cobra',
+    scientificName: 'Naja naja',
+    family: 'Elapidae',
+    genus: 'Naja',
+    region: 'India',
+    habitat: 'Agricultural land, forest fringes, rural settlements',
+    description: 'A highly recognizable hooded snake found across much of India.',
+    venom: 'Venomous',
+    conservation: 'Least Concern',
+    sources: ['GBIF', 'iNaturalist']
+  },
+  {
+    id: 'king-cobra',
+    commonName: 'King Cobra',
+    scientificName: 'Ophiophagus hannah',
+    family: 'Elapidae',
+    genus: 'Ophiophagus',
+    region: 'India',
+    habitat: 'Forests, dense vegetation, river edges',
+    description: 'The world’s longest venomous snake, often associated with forest habitats.',
+    venom: 'Venomous',
+    conservation: 'Vulnerable',
+    sources: ['GBIF', 'iNaturalist']
+  },
+  {
+    id: 'common-krait',
+    commonName: 'Common Krait',
+    scientificName: 'Bungarus caeruleus',
+    family: 'Elapidae',
+    genus: 'Bungarus',
+    region: 'India',
+    habitat: 'Fields, human settlements, stone walls',
+    description: 'A nocturnal elapid with a slender body and dark bands.',
+    venom: 'Venomous',
+    conservation: 'Least Concern',
+    sources: ['GBIF', 'iNaturalist']
+  },
+  {
+    id: 'russells-viper',
+    commonName: 'Russell’s Viper',
+    scientificName: 'Daboia russelii',
+    family: 'Viperidae',
+    genus: 'Daboia',
+    region: 'India',
+    habitat: 'Grasslands, agricultural land, dry forests',
+    description: 'A stout-bodied viper frequently associated with rural landscapes.',
+    venom: 'Venomous',
+    conservation: 'Least Concern',
+    sources: ['GBIF', 'iNaturalist']
+  },
+  {
+    id: 'checkered-keelback',
+    commonName: 'Checkered Keelback',
+    scientificName: 'Xenochrophis piscator',
+    family: 'Colubridae',
+    genus: 'Xenochrophis',
+    region: 'India',
+    habitat: 'Wetlands, rice fields, freshwater systems',
+    description: 'A semi-aquatic species often seen near damp habitats and water bodies.',
+    venom: 'Non-venomous',
+    conservation: 'Least Concern',
+    sources: ['GBIF', 'iNaturalist']
+  },
+  {
+    id: 'rat-snake',
+    commonName: 'Indian Rat Snake',
+    scientificName: 'Ptyas mucosa',
+    family: 'Colubridae',
+    genus: 'Ptyas',
+    region: 'India',
+    habitat: 'Farmland, forests, village edges',
+    description: 'A common non-venomous snake often found near human dwellings.',
+    venom: 'Non-venomous',
+    conservation: 'Least Concern',
+    sources: ['GBIF', 'iNaturalist']
+  }
+];

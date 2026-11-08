@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">Snake Identification App icon</title>
+  <desc id="desc">A forest green snake emblem.</desc>
+  <rect width="128" height="128" rx="28" fill="#1c3e2d"/>
+  <path d="M28 70c16-14 27-22 38-22 12 0 18 11 20 14 6 9 13 17 31 19-2 15-12 26-31 26-15 0-28-8-39-20-5-7-11-13-19-17z" fill="#dfeee3"/>
+  <circle cx="80" cy="48" r="6" fill="#1c3e2d"/>
+  <path d="M34 38c14-16 35-25 58-21" fill="none" stroke="#dfeee3" stroke-width="8" stroke-linecap="round"/>
+  <path d="M102 67c-9 16-18 24-35 32" fill="none" stroke="#dfeee3" stroke-width="8" stroke-linecap="round"/>
+</svg>
