@@ -1,0 +1,17 @@
+{
+  "name": "Snake Identification App",
+  "short_name": "Snake ID",
+  "description": "Professional snake identification and educational platform for wildlife safety and learning.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f0e6",
+  "theme_color": "#1c3e2d",
+  "icons": [
+    {
+      "src": "./icons/app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
