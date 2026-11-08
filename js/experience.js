@@ -2,6 +2,7 @@ const CHOICE_KEY = 'snake-id-experience';
 const APP_SELECTOR = '.app-shell';
 const styles = `
   .experience-gate { min-height: 100vh; display: grid; place-items: center; padding: 28px 18px; background: var(--bg, #f5f0e6); color: var(--text, #1a241d); }
+  .experience-gate[hidden] { display: none !important; }
   .experience-inner { width: min(100%, 1040px); }
   .experience-brand { text-align: center; margin: 0 auto 34px; }
   .experience-mark { width: 58px; height: 58px; margin: 0 auto 14px; display:grid; place-items:center; border-radius: 18px; background: #1c3e2d; color: #fff; font-size: 30px; }
